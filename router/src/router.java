@@ -7,7 +7,7 @@ public class router{
 
     public static void main(String args[]){
         // data to be sent
-        String data = "Please sir may I buy some instruments";
+        String data = "ACCEPTED! You may totally purchase your legal goods!";
         //starting router server
         try {
             //setup server
