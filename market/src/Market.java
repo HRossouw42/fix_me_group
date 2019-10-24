@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Broker {
+public class Market {
     /*
     public static void main(String[] args) {
         System.out.println("Attempting connection...");
@@ -32,14 +32,14 @@ public class Broker {
 
         if (args.length != 1) {
             System.err.println(
-                    "Usage: java broker <port number>");
+                    "Usage: java market <port number>");
             System.exit(1);
         }
 
 //        String hostName = args[0];
         int portNumber = Integer.parseInt(args[0]);
             String hostName = "localhost";
-//        int portNumber = 8000;
+//        int portNumber = 5001;
 
         try (
                 Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
