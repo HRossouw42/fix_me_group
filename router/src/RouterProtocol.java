@@ -1,7 +1,4 @@
-import java.net.*;
-import java.io.*;
-
-/* This class handles the current state of the conversation beween server and client */
+/* This class handles the current state of the conversation between server and client */
 
 public class RouterProtocol {
     private static final int WAITING = 0;
@@ -14,12 +11,12 @@ public class RouterProtocol {
     private int state = WAITING;
     private int currentJoke = 0;
 
-    private String[] clues = { "Turnip", "Little Old Lady", "Atch", "Who", "Who" };
-    private String[] answers = { "Turnip the heat, it's cold in here!",
+    private String[] clues = {"Turnip", "Little Old Lady", "Atch", "Who", "Who"};
+    private String[] answers = {"Turnip the heat, it's cold in here!",
             "I didn't know you could yodel!",
             "Bless you!",
             "Is there an owl in here?",
-            "Is there an echo in here?" };
+            "Is there an echo in here?"};
 
     public String processInput(String theInput) {
         String theOutput = null;

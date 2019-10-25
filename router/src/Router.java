@@ -1,10 +1,5 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.UnknownHostException;
 
 // initial -> https://www.java-samples.com/showtutorial.php?tutorialid=1167
 // official Java multithreading tutorial -> https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html
@@ -23,6 +18,7 @@ public class Router {
 
         System.out.println("Connect at least 1 Market and 1 Broker");
         try (
+                //currently requires at least these 2 to be connected before continuing
                 ServerSocket marketSocket = new ServerSocket(marketPortNumber);
                 ServerSocket serverSocket = new ServerSocket(portNumber)
         ) {

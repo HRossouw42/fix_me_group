@@ -17,10 +17,10 @@ public class Market {
 
 //        String hostName = args[0];
         int portNumber = Integer.parseInt(args[0]);
-            String hostName = "localhost";
+        String hostName = "localhost";
 //        int portNumber = 5001;
 
-        System.out.println("Attempting connectiong...");
+        System.out.println("Attempting connection...");
         try (
                 Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
                 PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true);

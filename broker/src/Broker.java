@@ -17,15 +17,15 @@ public class Broker {
 
 //        String hostName = args[0];
         int portNumber = Integer.parseInt(args[0]);
-            String hostName = "localhost";
+        String hostName = "localhost";
 //        int portNumber = 8000;
 
-        System.out.println("Attempting connectiong...");
+        System.out.println("Attempting connection...");
         try (
                 Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
-                PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true);
+                PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true); //this looks at the IO of the socket
                 BufferedReader in = new BufferedReader(
-                        new InputStreamReader(kkSocket.getInputStream()));
+                        new InputStreamReader(kkSocket.getInputStream())) //reads from IO
         ) {
             BufferedReader stdIn =
                     new BufferedReader(new InputStreamReader(System.in));
