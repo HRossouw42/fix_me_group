@@ -20,6 +20,7 @@ public class Market {
             String hostName = "localhost";
 //        int portNumber = 5001;
 
+        System.out.println("Attempting connectiong...");
         try (
                 Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
                 PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true);

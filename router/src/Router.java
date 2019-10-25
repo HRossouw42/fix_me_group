@@ -23,12 +23,12 @@ public class Router {
 
         System.out.println("Connect at least 1 Market and 1 Broker");
         try (
-                ServerSocket serverSocket = new ServerSocket(portNumber);
                 ServerSocket marketSocket = new ServerSocket(marketPortNumber);
+                ServerSocket serverSocket = new ServerSocket(portNumber)
         ) {
             while (listening) {
-                new RouterMultiThread(marketSocket.accept()).start();
                 new RouterMultiThread(serverSocket.accept()).start();
+                new RouterMultiThread(marketSocket.accept()).start();
             }
         } catch (IOException e) {
             System.err.println("Could not listen on port " + portNumber);
