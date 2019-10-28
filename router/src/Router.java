@@ -7,8 +7,8 @@ public class Router {
 
     public static void main(String[] args) throws IOException {
 
-        int routerCounter = 100; //for IDs of connections
-        int marketCounter = 200;
+        int routerCounter = 100000; //for IDs of connections
+        int marketCounter = 200000;
 
         int marketPortNumber = 5001;
         int brokerPortNumber = 5000;
