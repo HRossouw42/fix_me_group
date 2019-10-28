@@ -8,9 +8,10 @@ public class RouterProtocol {
 
     private static final int ISBROKER = 1;
     private static final int ISMARKET = 2;
+    private static final int ANOTHER = 3;
 
-    private static final int BROKERBUY = 3;
-    private static final int BROKERSELL = 4;
+    private static final int BROKERBUY = 4;
+    private static final int BROKERSELL = 5;
 
     private static final int NUMJOKES = 5;
     int clientId = 0;
@@ -43,19 +44,33 @@ public class RouterProtocol {
         } else if (state == ISBROKER) {
             if (theInput.equalsIgnoreCase("Buy")) {
                 theOutput = "[TODO LIST OF STUFF YOU CAN BUY]";
-                state = WAITING; //TODO replace with BROKERBUY when functional
+                state = BROKERBUY; //TODO check input
             } else if (theInput.equalsIgnoreCase("Sell")) {
                 theOutput = "[TODO LIST OF STUFF YOU CAN SELL]";
-                state = WAITING; //TODO replace with BROKERSELL when functional
+                state = BROKERSELL; //TODO check input
             } else {
-                theOutput = "You must either 'Buy' or 'Sell', or 'exit' to quit";
+                theOutput = "You must either 'Buy' or 'Sell'";
             }
+        } else if (state == BROKERBUY) {
+            theOutput = "Item bought! Continue? (Y/N)";
+            state = ANOTHER;
+        } else if (state == BROKERSELL) {
+            theOutput = "Item sold! Continue? (Y/N)";
+            state = ANOTHER;
         } else if (state == ISMARKET) {
             if (theInput.equalsIgnoreCase("List")) {
                 theOutput = "[TODO LIST MARKET INSTRUMENTS]";
                 state = WAITING;
             } else {
-                theOutput = "You must type 'List' to see your instruments, or 'exit' to quit";
+                theOutput = "You must type 'List' to see your instruments";
+            }
+        } else if (state == ANOTHER) {
+            if (theInput.equalsIgnoreCase("y")) {
+                theOutput = "Press ENTER to continue";
+                state = WAITING;
+            } else {
+                theOutput = "exit";
+                state = WAITING;
             }
         }
         return theOutput;
