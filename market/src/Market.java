@@ -9,15 +9,6 @@ public class Market {
 
     public static void main(String[] args) throws IOException {
 
-//        if (args.length != 1) {
-//            System.err.println(
-//                    "Usage: java market <port number>");
-//            System.exit(1);
-//        }
-
-//        String hostName = args[0];
-//        int portNumber = Integer.parseInt(args[0]);
-
         String hostName = "localhost";
         int portNumber = 5001;
 

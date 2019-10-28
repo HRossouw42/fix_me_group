@@ -5,11 +5,13 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class RouterMultiThread extends Thread {
+    int clientId = 0;
     private Socket socket = null;
 
-    public RouterMultiThread(Socket socket) {
+    public RouterMultiThread(Socket socket, int counter) {
         super("RouterMultiThread");
         this.socket = socket;
+        this.clientId = counter;
     }
 
     public void run() {
@@ -21,7 +23,7 @@ public class RouterMultiThread extends Thread {
                                 socket.getInputStream()));
         ) {
             String inputLine, outputLine;
-            RouterProtocol kkp = new RouterProtocol();
+            RouterProtocol kkp = new RouterProtocol(clientId);
             outputLine = kkp.processInput(null);
             out.println(outputLine);
 
