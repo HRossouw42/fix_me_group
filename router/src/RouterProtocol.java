@@ -2,15 +2,20 @@
 
 public class RouterProtocol {
     private static final int WAITING = 0;
-    private static final int SENTKNOCKKNOCK = 1;
-    private static final int SENTCLUE = 2;
-    private static final int ANOTHER = 3;
+//    private static final int SENTKNOCKKNOCK = 1;
+//    private static final int SENTCLUE = 2;
+//    private static final int ANOTHER = 3;
+
+    private static final int ISBROKER = 1;
+    private static final int ISMARKET = 2;
+
+    private static final int BROKERBUY = 3;
+    private static final int BROKERSELL = 4;
 
     private static final int NUMJOKES = 5;
-
+    int clientId = 0;
     private int state = WAITING;
     private int currentJoke = 0;
-
     private String[] clues = {"Turnip", "Little Old Lady", "Atch", "Who", "Who"};
     private String[] answers = {"Turnip the heat, it's cold in here!",
             "I didn't know you could yodel!",
@@ -18,8 +23,48 @@ public class RouterProtocol {
             "Is there an owl in here?",
             "Is there an echo in here?"};
 
+    public RouterProtocol(int id) {
+        this.clientId = id;
+    }
+    //TODO fetch a list of brokers and markets and add them here
+
     public String processInput(String theInput) {
         String theOutput = null;
+
+
+        if (state == WAITING) {
+            if (clientId >= 100 && clientId <= 200) {
+                theOutput = "Your BrokerID is: " + clientId + " " + " Would you like to 'Buy' or 'Sell'?";
+                state = ISBROKER;
+            } else if (clientId >= 200) {
+                theOutput = "Your MarketID is: " + clientId + " Use 'List' to see your instruments";
+                state = ISMARKET;
+            }
+        } else if (state == ISBROKER) {
+            if (theInput.equalsIgnoreCase("Buy")) {
+                theOutput = "[TODO LIST OF STUFF YOU CAN BUY]";
+                state = WAITING; //TODO replace with BROKERBUY when functional
+            } else if (theInput.equalsIgnoreCase("Sell")) {
+                theOutput = "[TODO LIST OF STUFF YOU CAN SELL]";
+                state = WAITING; //TODO replace with BROKERSELL when functional
+            } else {
+                theOutput = "You must either 'Buy' or 'Sell', or 'exit' to quit";
+            }
+        } else if (state == ISMARKET) {
+            if (theInput.equalsIgnoreCase("List")) {
+                theOutput = "[TODO LIST MARKET INSTRUMENTS]";
+                state = WAITING;
+            } else {
+                theOutput = "You must type 'List' to see your instruments, or 'exit' to quit";
+            }
+        }
+        return theOutput;
+    }
+
+/*
+    public String OLDprocessInput(String theInput) {
+        String theOutput = null;
+
 
         if (state == WAITING) {
             theOutput = "Knock! Knock!";
@@ -58,4 +103,5 @@ public class RouterProtocol {
         }
         return theOutput;
     }
+ */
 }

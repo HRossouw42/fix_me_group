@@ -9,17 +9,8 @@ public class Broker {
 
     public static void main(String[] args) throws IOException {
 
-//        if (args.length != 1) {
-//            System.err.println(
-//                    "Usage: java broker <port number>");
-//            System.exit(1);
-//        }
-
-//        String hostName = args[0];
-//        int portNumber = Integer.parseInt(args[0]);
-
         String hostName = "localhost";
-        int portNumber = 8000;
+        int portNumber = 5000;
 
         System.out.println("Attempting connection...");
         try (
