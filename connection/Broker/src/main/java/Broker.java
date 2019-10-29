@@ -3,20 +3,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Broker {
 
     public static void main(String[] args) throws IOException {
-
-//        if (args.length != 1) {
-//            System.err.println(
-//                    "Usage: java broker <port number>");
-//            System.exit(1);
-//        }
-
-//        String hostName = args[0];
-//        int portNumber = Integer.parseInt(args[0]);
 
         String hostName = "localhost";
         int portNumber = 5000;

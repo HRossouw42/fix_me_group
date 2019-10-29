@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.net.ServerSocket;
 
@@ -8,27 +7,28 @@ public class Router {
 
     public static void main(String[] args) throws IOException {
 
-        if (args.length != 1) {
-            System.err.println("Usage: java KKMultiServer <port number>");
-            System.exit(1);
-        }
+        int routerCounter = 100000; //for IDs of connections
+        int marketCounter = 200000;
 
-        int portNumber = Integer.parseInt(args[0]);
         int marketPortNumber = 5001;
+        int brokerPortNumber = 5000;
+
         boolean listening = true;
 
         System.out.println("Connect at least 1 Market and 1 Broker");
         try (
                 //currently requires at least these 2 to be connected before continuing
                 ServerSocket marketSocket = new ServerSocket(marketPortNumber);
-                ServerSocket serverSocket = new ServerSocket(portNumber)
+                ServerSocket serverSocket = new ServerSocket(brokerPortNumber)
         ) {
             while (listening) {
-                new RouterMultiThread(serverSocket.accept()).start();
-                new RouterMultiThread(marketSocket.accept()).start();
+                routerCounter++; //assign IDs
+                marketCounter++;
+                new RouterMultiThread(serverSocket.accept(), routerCounter).start();
+                new RouterMultiThread(marketSocket.accept(), marketCounter).start();
             }
         } catch (IOException e) {
-            System.err.println("Could not listen on port " + portNumber);
+            System.err.println("Could not listen on ports:" + brokerPortNumber + " " + marketPortNumber);
             System.exit(-1);
         }
     }
