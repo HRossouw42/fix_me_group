@@ -18,8 +18,8 @@ public class Router {
         System.out.println("Connect at least 1 Market and 1 Broker");
         try (
                 //currently requires at least these 2 to be connected before continuing
-                ServerSocket marketSocket = new ServerSocket(marketPortNumber);
-                ServerSocket serverSocket = new ServerSocket(brokerPortNumber)
+                ServerSocket serverSocket = new ServerSocket(brokerPortNumber);
+                ServerSocket marketSocket = new ServerSocket(marketPortNumber)
         ) {
             while (listening) {
                 routerCounter++; //assign IDs

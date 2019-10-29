@@ -7,8 +7,15 @@ import java.net.UnknownHostException;
 
 public class Broker {
 
+    int id = 0;
+
     public static void main(String[] args) throws IOException {
 
+        Broker broker = new Broker();
+        broker.run();
+    }
+
+    public void run() throws IOException {
         String hostName = "localhost";
         int portNumber = 5000;
 
@@ -30,9 +37,15 @@ public class Broker {
                 if (fromServer.equals("exit")) //if server says this, end
                     break;
 
+                //to get id
+                if (id == 0) {
+                    String[] getID = fromServer.split(" ");
+                    id = Integer.parseInt(getID[1]);
+                }
+
                 fromUser = stdIn.readLine(); //take input
                 if (fromUser != null) {
-                    System.out.println("Client: " + fromUser);
+                    System.out.println(id + ": " + fromUser);
                     out.println(fromUser);
                 }
             }

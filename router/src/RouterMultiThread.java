@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class RouterMultiThread extends Thread {
+    Broker broker;
     int clientId = 0;
     private Socket socket = null;
 
