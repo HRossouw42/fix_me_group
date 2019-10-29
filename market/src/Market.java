@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Market {
+    int id;
 
     public static void main(String[] args) throws IOException {
 

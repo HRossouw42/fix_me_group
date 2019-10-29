@@ -35,10 +35,10 @@ public class RouterProtocol {
 
         if (state == WAITING) {
             if (clientId >= 100000 && clientId <= 200000) {
-                theOutput = "Your BrokerID is: " + clientId + " " + " Would you like to 'Buy' or 'Sell'?";
+                theOutput = "BrokerID: " + clientId + " " + " Would you like to 'Buy' or 'Sell'?";
                 state = ISBROKER;
             } else if (clientId >= 200000) {
-                theOutput = "Your MarketID is: " + clientId + " Use 'List' to see your instruments";
+                theOutput = "MarketID: " + clientId + " Use 'List' to see your instruments";
                 state = ISMARKET;
             }
         } else if (state == ISBROKER) {
