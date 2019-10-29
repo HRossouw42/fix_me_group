@@ -36,6 +36,7 @@ public class Broker {
                 System.out.println("Server: " + fromServer); //server speaks first, so client must listen
                 if (fromServer.equals("exit")) //if server says this, end
                     break;
+
                 //to get id
                 if (id == 0) {
                     String[] getID = fromServer.split(" ");
