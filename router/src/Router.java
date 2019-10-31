@@ -1,9 +1,14 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
+import java.util.HashSet;
+import java.util.Set;
 
 // initial -> https://www.java-samples.com/showtutorial.php?tutorialid=1167
 // official Java multithreading tutorial -> https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html
 public class Router {
+
+    public Set<PrintWriter> writers = new HashSet<>();
 
     public static void main(String[] args) throws IOException {
 
@@ -12,6 +17,8 @@ public class Router {
 
         int marketPortNumber = 5001;
         int brokerPortNumber = 5000;
+
+        Set<PrintWriter> writers = new HashSet<>();
 
         boolean listening = true;
 
@@ -24,8 +31,8 @@ public class Router {
             while (listening) {
                 routerCounter++; //assign IDs
                 marketCounter++;
-                new RouterMultiThread(serverSocket.accept(), routerCounter).start();
-                new RouterMultiThread(marketSocket.accept(), marketCounter).start();
+                new RouterMultiThread(serverSocket.accept(), routerCounter, writers).start();
+                new RouterMultiThread(marketSocket.accept(), marketCounter, writers).start();
             }
         } catch (IOException e) {
             System.err.println("Could not listen on ports:" + brokerPortNumber + " " + marketPortNumber);

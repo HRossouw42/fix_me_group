@@ -8,6 +8,7 @@ import java.net.UnknownHostException;
 public class Market {
 
     int id = 0;
+    String[] instruments = {"violin", "guitar", "piano"};
 
     public void run() throws IOException {
         String hostName = "localhost";
