@@ -1,0 +1,1 @@
+java -cp Router/target/Router-router.jar Router/src/main/java/Router.java

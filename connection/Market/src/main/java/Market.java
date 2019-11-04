@@ -7,12 +7,13 @@ import java.net.UnknownHostException;
 
 public class Market {
 
-    public static void main(String[] args) throws IOException {
+    int id = 0;
 
+    public void run() throws IOException {
         String hostName = "localhost";
         int portNumber = 5001;
 
-        System.out.println("Attempting connection...");
+        System.out.println("Attempting connection to Port:" + portNumber);
         try (
                 Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
                 PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true);
@@ -22,6 +23,7 @@ public class Market {
             BufferedReader stdIn =
                     new BufferedReader(new InputStreamReader(System.in));
             String fromServer;
+            String toServer;
             String fromUser;
 
             //implement communication between client and server
@@ -30,19 +32,31 @@ public class Market {
                 if (fromServer.equals("exit")) //if server says this, end
                     break;
 
+                //to get id
+                if (id == 0) {
+                    String[] getID = fromServer.split(" ");
+                    id = Integer.parseInt(getID[1]);
+                }
+
                 fromUser = stdIn.readLine(); //take input
                 if (fromUser != null) {
-                    System.out.println("Client: " + fromUser);
+                    System.out.println("Client-" + id + ": " + fromUser);
                     out.println(fromUser);
+
                 }
             }
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
             System.exit(1);
         } catch (IOException e) {
-            System.err.println("Couldn't get I/O for the connection to " +
-                    hostName);
+            System.err.println("Couldn't get I/O for the connection to " + hostName);
             System.exit(1);
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        Market market = new Market();
+        market.run();
     }
 }

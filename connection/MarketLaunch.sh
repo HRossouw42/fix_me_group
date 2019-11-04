@@ -1,0 +1,1 @@
+java -cp Market/target/Market-market.jar Market/src/main/java/Market.java

@@ -2,10 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef9ff377-4fe7-4ac5-a35d-882c60514c38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/connection/Broker/src/main/java/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/connection/Router/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/src/main/java/Broker.java" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Broker/src/main/java/Broker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/Broker-broker.jar" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Broker/target/Broker-broker.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/classes/Broker.class" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Broker/target/classes/Broker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Broker/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Broker/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Broker/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/surefire-reports/TEST-org.baeldung.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/surefire-reports/org.baeldung.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Broker/target/test-classes/org/baeldung/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/src/main/java/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Market/src/main/java/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/Market-market.jar" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Market/target/Market-market.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/classes/Market.class" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Market/target/classes/Market.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Market/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Market/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/surefire-reports/TEST-org.baeldung.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/surefire-reports/org.baeldung.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Market/target/test-classes/org/baeldung/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/src/main/java/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/src/main/java/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/src/main/java/RouterProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/src/main/java/RouterProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/Router-router.jar" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/target/Router-router.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/classes/Router.class" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/target/classes/Router.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/classes/RouterMultiThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/target/classes/RouterMultiThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/classes/RouterProtocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/target/classes/RouterProtocol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/connection/Router/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/surefire-reports/TEST-org.baeldung.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/surefire-reports/org.baeldung.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/Router/target/test-classes/org/baeldung/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/src/main/java/org/baeldung/App.java" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/classes/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,126 +53,21 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Router/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Broker/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-end-line="22" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Maven Quick Start Archetype" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fix_me_group" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fix_me_group" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fix_me_group" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fix_me_group" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fix_me_group" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Broker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fix_me_group" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FIX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fix_me_group" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1SyPJWcxmq0YDiAG09Fkvof8OX5" />
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FIXERER" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/connection" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -192,63 +125,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571828332959</updated>
+      <workItem from="1572532808278" duration="4681000" />
+      <workItem from="1572585353292" duration="7928000" />
+      <workItem from="1572611566423" duration="6904000" />
+      <workItem from="1572843022417" duration="7781000" />
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38074398" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32932165" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32932165" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32932165" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.10065646" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Router/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Broker/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>

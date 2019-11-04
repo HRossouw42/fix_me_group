@@ -1,0 +1,1 @@
+java -cp Broker/target/Broker-broker.jar Broker/src/main/java/Broker.java

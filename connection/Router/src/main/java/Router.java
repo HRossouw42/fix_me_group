@@ -14,21 +14,23 @@ public class Router {
         int brokerPortNumber = 5000;
 
         boolean listening = true;
-
-        System.out.println("Connect at least 1 Market and 1 Broker");
+        String output;
+        System.out.println("Server Online. Please connect at least 1 Market and 1 Broker");
         try (
                 //currently requires at least these 2 to be connected before continuing
-                ServerSocket marketSocket = new ServerSocket(marketPortNumber);
-                ServerSocket serverSocket = new ServerSocket(brokerPortNumber)
+                ServerSocket serverSocket = new ServerSocket(brokerPortNumber);
+                ServerSocket marketSocket = new ServerSocket(marketPortNumber)
         ) {
             while (listening) {
                 routerCounter++; //assign IDs
                 marketCounter++;
                 new RouterMultiThread(serverSocket.accept(), routerCounter).start();
+                System.out.println("Current BrokerID is: " + routerCounter);
                 new RouterMultiThread(marketSocket.accept(), marketCounter).start();
+                System.out.println("Current MarketID is: " + marketCounter);
             }
         } catch (IOException e) {
-            System.err.println("Could not listen on ports:" + brokerPortNumber + " " + marketPortNumber);
+            System.err.println("Could not listen on ports: " + brokerPortNumber + " " + marketPortNumber);
             System.exit(-1);
         }
     }
