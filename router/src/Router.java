@@ -1,14 +1,52 @@
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.HashSet;
 import java.util.Set;
+
 
 // initial -> https://www.java-samples.com/showtutorial.php?tutorialid=1167
 // official Java multithreading tutorial -> https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html
 public class Router {
 
     public Set<PrintWriter> writers = new HashSet<>();
+
+    public static void marketConnection() {
+
+        InstrumentList employee = null;
+
+        try {
+
+            ServerSocket socketConnection = new ServerSocket(11111);
+
+            System.out.println("Server Waiting");
+
+            Socket pipe = socketConnection.accept();
+
+            ObjectInputStream serverInputStream = new
+                    ObjectInputStream(pipe.getInputStream());
+
+            ObjectOutputStream serverOutputStream = new
+                    ObjectOutputStream(pipe.getOutputStream());
+
+            employee = (InstrumentList) serverInputStream.readObject();
+
+            employee.setEmployeeNumber(256);
+            employee.setEmployeeName("John");
+
+            serverOutputStream.writeObject(employee);
+
+            serverInputStream.close();
+            serverOutputStream.close();
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
     public static void main(String[] args) throws IOException {
 
@@ -39,4 +77,6 @@ public class Router {
             System.exit(-1);
         }
     }
+
+
 }

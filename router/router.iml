@@ -8,5 +8,6 @@
     <orderEntry type="jdk" jdkName="12.0.1" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="broker" />
+    <orderEntry type="module" module-name="market" />
   </component>
 </module>
