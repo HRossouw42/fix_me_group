@@ -30,18 +30,24 @@ public class RouterMultiThread extends Thread {
             String inputLine, outputLine;
             writers.add(out);
             System.out.println(writers);
-            RouterProtocol kkp = new RouterProtocol(clientId);
+            RouterProtocol kkp = new RouterProtocol(clientId, writers);
             outputLine = kkp.processInput(null);
             out.println(outputLine);
 
             //TODO fix this printwriter
-            for (PrintWriter writer : writers) {
-                writer.println("MESSAGE: OHGOD WHY");
-            }
 
             while ((inputLine = in.readLine()) != null) {
                 outputLine = kkp.processInput(inputLine);
-                out.println(outputLine);
+                if (outputLine.equalsIgnoreCase("List")){
+                    System.out.println("REEEEEEE");
+                    for (PrintWriter writer : writers) {
+                        writer.println(outputLine);
+                    }
+                }
+                else {
+                    out.println(outputLine);
+                }
+//                out.println(outputLine);
                 if (outputLine.equals("exit"))
                     break;
             }
