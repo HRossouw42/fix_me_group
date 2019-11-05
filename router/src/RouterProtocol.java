@@ -1,6 +1,11 @@
 /* This class handles the current state of the conversation between server and client */
 
+import java.io.PrintWriter;
+import java.util.Set;
+
 public class RouterProtocol {
+    private Set<PrintWriter> writers;
+
     private static final int WAITING = 0;
 //    private static final int SENTKNOCKKNOCK = 1;
 //    private static final int SENTCLUE = 2;
@@ -24,8 +29,9 @@ public class RouterProtocol {
             "Is there an owl in here?",
             "Is there an echo in here?"};
 
-    public RouterProtocol(int id) {
+    public RouterProtocol(int id, Set<PrintWriter> writers) {
         this.clientId = id;
+        this.writers = writers;
     }
     //TODO fetch a list of brokers and markets and add them here
 
