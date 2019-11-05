@@ -60,9 +60,9 @@ public static void main(String[] arg) {
     try {
         InstrumentList joe = new InstrumentList(150, "Joe");
 
-        System.out.println("employeeNumber= "
+        System.out.println("employeeNumber before= "
                 + joe .getEmployeeNumber());
-        System.out.println("employeeName= "
+        System.out.println("employeeName before= "
                 + joe .getEmployeeName());
 
         Socket socketConnection = new Socket("127.0.0.1", 11111);
@@ -77,9 +77,9 @@ public static void main(String[] arg) {
 
         joe= (InstrumentList) clientInputStream.readObject();
 
-        System.out.println("employeeNumber= "
+        System.out.println("employeeNumber after= "
                 + joe .getEmployeeNumber());
-        System.out.println("employeeName= "
+        System.out.println("employeeName after= "
                 + joe .getEmployeeName());
 
         clientOutputStream.close();
