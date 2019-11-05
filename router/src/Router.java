@@ -60,12 +60,29 @@ public class Router {
 
         boolean listening = true;
 
+        InstrumentList employee = null;
+
         System.out.println("Connect at least 1 Market and 1 Broker");
         try (
                 //currently requires at least these 2 to be connected before continuing
                 ServerSocket serverSocket = new ServerSocket(brokerPortNumber);
                 ServerSocket marketSocket = new ServerSocket(marketPortNumber)
         ) {
+            Socket pipe = marketSocket.accept();
+
+            ObjectInputStream serverInputStream = new
+                    ObjectInputStream(pipe.getInputStream());
+
+            ObjectOutputStream serverOutputStream = new
+                    ObjectOutputStream(pipe.getOutputStream());
+
+            employee = (InstrumentList) serverInputStream.readObject();
+
+            employee.setEmployeeNumber(256);
+            employee.setEmployeeName("John");
+
+            serverOutputStream.writeObject(employee);
+
             while (listening) {
                 routerCounter++; //assign IDs
                 marketCounter++;
@@ -75,6 +92,8 @@ public class Router {
         } catch (IOException e) {
             System.err.println("Could not listen on ports:" + brokerPortNumber + " " + marketPortNumber);
             System.exit(-1);
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 

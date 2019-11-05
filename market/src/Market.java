@@ -37,6 +37,7 @@ public class Market {
             System.out.println("employeeName after= "
                     + joe .getEmployeeName());
 
+            System.out.println("CLOSING PORTS");
             clientOutputStream.close();
             clientInputStream.close();
 
