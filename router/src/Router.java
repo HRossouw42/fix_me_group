@@ -34,8 +34,8 @@ public class Router {
 
             employee = (InstrumentList) serverInputStream.readObject();
 
-            employee.setEmployeeNumber(256);
-            employee.setEmployeeName("John");
+            employee.setPotionNumber(256);
+            employee.setPotionName("John");
 
             serverOutputStream.writeObject(employee);
 
@@ -60,7 +60,7 @@ public class Router {
 
         boolean listening = true;
 
-        InstrumentList employee = null;
+        InstrumentList marketList = null;
 
         System.out.println("Connect at least 1 Market and 1 Broker");
         try (
@@ -76,12 +76,13 @@ public class Router {
             ObjectOutputStream serverOutputStream = new
                     ObjectOutputStream(pipe.getOutputStream());
 
-            employee = (InstrumentList) serverInputStream.readObject();
+            marketList = (InstrumentList) serverInputStream.readObject();
 
-            employee.setEmployeeNumber(256);
-            employee.setEmployeeName("John");
+            marketList.setPotionNumber(256);
+            marketList.setPotionName("Mana");
+            marketList.addPotionNumber();
 
-            serverOutputStream.writeObject(employee);
+            serverOutputStream.writeObject(marketList);
 
             while (listening) {
                 routerCounter++; //assign IDs

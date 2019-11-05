@@ -11,11 +11,11 @@ public class Market {
         int portNumber = 5001;
 
         //adding instruments
-        InstrumentList joe = new InstrumentList(150, "Joe");
-        System.out.println("employeeNumber before= "
-                + joe .getEmployeeNumber());
-        System.out.println("employeeName before= "
-                + joe .getEmployeeName());
+        InstrumentList health = new InstrumentList(150, "Health");
+        System.out.println("Potion number before= "
+                + health .getPotionNumber());
+        System.out.println("Potion name before= "
+                + health .getPotionName());
 
 
         System.out.println("Attempting connection...");
@@ -28,14 +28,14 @@ public class Market {
             ObjectInputStream clientInputStream = new
                     ObjectInputStream(kkSocket.getInputStream());
 
-            clientOutputStream.writeObject(joe);
+            clientOutputStream.writeObject(health);
 
-            joe= (InstrumentList) clientInputStream.readObject();
+            health= (InstrumentList) clientInputStream.readObject();
 
-            System.out.println("employeeNumber after= "
-                    + joe .getEmployeeNumber());
-            System.out.println("employeeName after= "
-                    + joe .getEmployeeName());
+            System.out.println("Potion number after= "
+                    + health .getPotionNumber());
+            System.out.println("Potion name after= "
+                    + health .getPotionName());
 
             System.out.println("CLOSING PORTS");
             clientOutputStream.close();
@@ -132,9 +132,9 @@ public static void main(String[] arg) {
         InstrumentList joe = new InstrumentList(150, "Joe");
 
         System.out.println("employeeNumber before= "
-                + joe .getEmployeeNumber());
+                + joe .getPotionNumber());
         System.out.println("employeeName before= "
-                + joe .getEmployeeName());
+                + joe .getPotionName());
 
         Socket socketConnection = new Socket("127.0.0.1", 11111);
 
@@ -149,9 +149,9 @@ public static void main(String[] arg) {
         joe= (InstrumentList) clientInputStream.readObject();
 
         System.out.println("employeeNumber after= "
-                + joe .getEmployeeNumber());
+                + joe .getPotionNumber());
         System.out.println("employeeName after= "
-                + joe .getEmployeeName());
+                + joe .getPotionName());
 
         clientOutputStream.close();
         clientInputStream.close();
