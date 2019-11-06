@@ -14,9 +14,9 @@ public class Market {
 
         //adding instruments
         InstrumentList health = new InstrumentList(150, "Health");
-        System.out.println("Potion number before = "
+        System.out.println("Potion number before= "
                 + health .getPotionNumber());
-        System.out.println("Potion name before = "
+        System.out.println("Potion name before= "
                 + health .getPotionName());
 
 
@@ -34,15 +34,41 @@ public class Market {
 
             health= (InstrumentList) clientInputStream.readObject();
 
-            System.out.println("Potion number after = "
+            System.out.println("Potion number after= "
                     + health .getPotionNumber());
-            System.out.println("Potion name after = "
+            System.out.println("Potion name after= "
                     + health .getPotionName());
 
-            System.out.println("CLOSING PORTS");
-            clientOutputStream.close();
-            clientInputStream.close();
+//            System.out.println("CLOSING PORTS");
+//            clientOutputStream.close();
+//            clientInputStream.close();
 
+            /*
+            BufferedReader stdIn =
+                    new BufferedReader(new InputStreamReader(System.in));
+            String fromServer;
+            String fromUser;
+
+            //implement communication between client and server
+            while ((fromServer = in.readLine()) != null) {
+                System.out.println("Server: " + fromServer); //server speaks first, so client must listen
+                if (fromServer.equals("exit")) //if server says this, end
+                    break;
+
+                //to get id
+                if (id == 0) {
+                    String[] getID = fromServer.split(" ");
+                    id = Integer.parseInt(getID[1]);
+                }
+
+                fromUser = stdIn.readLine(); //take input
+                if (fromUser != null) {
+                    System.out.println(id + ": " + fromUser);
+                    out.println(fromUser);
+                }
+            }
+
+             */
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
             System.exit(1);
@@ -53,7 +79,47 @@ public class Market {
         } catch (Exception e) {
             System.err.println(e);
         }
+        /*
+        try (
 
+                Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
+                PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true);
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(kkSocket.getInputStream()));
+        ) {
+            BufferedReader stdIn =
+                    new BufferedReader(new InputStreamReader(System.in));
+            String fromServer;
+            String fromUser;
+
+            //implement communication between client and server
+            while ((fromServer = in.readLine()) != null) {
+                System.out.println("Server: " + fromServer); //server speaks first, so client must listen
+                if (fromServer.equals("exit")) //if server says this, end
+                    break;
+
+                //to get id
+                if (id == 0) {
+                    String[] getID = fromServer.split(" ");
+                    id = Integer.parseInt(getID[1]);
+                }
+
+                fromUser = stdIn.readLine(); //take input
+                if (fromUser != null) {
+                    System.out.println(id + ": " + fromUser);
+                    out.println(fromUser);
+                }
+            }
+        } catch (UnknownHostException e) {
+            System.err.println("Don't know about host " + hostName);
+            System.exit(1);
+        } catch (IOException e) {
+            System.err.println("Couldn't get I/O for the connection to " +
+                    hostName);
+            System.exit(1);
+        }
+
+         */
     }
 
     public static void main(String[] args) throws IOException {

@@ -8,18 +8,21 @@ import java.net.Socket;
 import java.util.Set;
 
 import Broker.Broker;
+import Market.InstrumentList;
 
 public class RouterMultiThread extends Thread {
     Broker broker;
     int clientId = 0;
     private Socket socket = null;
     private Set<PrintWriter> writers;
+    private InstrumentList marketList = null;
 
-    public RouterMultiThread(Socket socket, int counter, Set<PrintWriter> writers) {
+    public RouterMultiThread(Socket socket, int counter, Set<PrintWriter> writers, InstrumentList marketList) {
         super("RouterMultiThread");
         this.socket = socket;
         this.clientId = counter;
         this.writers = writers;
+        this.marketList = marketList;
     }
 
     public void run() {
