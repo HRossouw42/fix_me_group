@@ -37,9 +37,9 @@ public class Market {
             System.out.println("Potion name after= "
                     + health .getPotionName());
 
-            System.out.println("CLOSING PORTS");
-            clientOutputStream.close();
-            clientInputStream.close();
+//            System.out.println("CLOSING PORTS");
+//            clientOutputStream.close();
+//            clientInputStream.close();
 
             /*
             BufferedReader stdIn =
@@ -125,40 +125,4 @@ public class Market {
         Market market = new Market();
         market.run();
     }
-
-    /*
-public static void main(String[] arg) {
-    try {
-        InstrumentList joe = new InstrumentList(150, "Joe");
-
-        System.out.println("employeeNumber before= "
-                + joe .getPotionNumber());
-        System.out.println("employeeName before= "
-                + joe .getPotionName());
-
-        Socket socketConnection = new Socket("127.0.0.1", 11111);
-
-
-        ObjectOutputStream clientOutputStream = new
-                ObjectOutputStream(socketConnection.getOutputStream());
-        ObjectInputStream clientInputStream = new
-                ObjectInputStream(socketConnection.getInputStream());
-
-        clientOutputStream.writeObject(joe);
-
-        joe= (InstrumentList) clientInputStream.readObject();
-
-        System.out.println("employeeNumber after= "
-                + joe .getPotionNumber());
-        System.out.println("employeeName after= "
-                + joe .getPotionName());
-
-        clientOutputStream.close();
-        clientInputStream.close();
-
-    } catch (Exception e) {System.out.println(e); }
-}
-
-     */
-
 }

@@ -1,3 +1,5 @@
+package Router;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,19 +7,19 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Set;
 
+import Broker.Broker;
+
 public class RouterMultiThread extends Thread {
     Broker broker;
     int clientId = 0;
     private Socket socket = null;
     private Set<PrintWriter> writers;
-    private InstrumentList marketList = null;
 
-    public RouterMultiThread(Socket socket, int counter, Set<PrintWriter> writers, InstrumentList marketList) {
+    public RouterMultiThread(Socket socket, int counter, Set<PrintWriter> writers) {
         super("RouterMultiThread");
         this.socket = socket;
         this.clientId = counter;
         this.writers = writers;
-        this.marketList = marketList;
     }
 
     public void run() {
@@ -48,7 +50,6 @@ public class RouterMultiThread extends Thread {
                 else {
                     out.println(outputLine);
                 }
-//                out.println(outputLine);
                 if (outputLine.equals("exit"))
                     break;
             }
