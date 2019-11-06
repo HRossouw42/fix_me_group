@@ -45,7 +45,7 @@ public class Router {
 
             serverInputStream.close();
             serverOutputStream.close();
-
+            socketConnection.close();
 
         } catch (Exception e) {
             System.out.println(e);
