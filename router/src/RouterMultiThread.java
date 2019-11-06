@@ -1,14 +1,9 @@
-package Router;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Set;
-
-import Broker.Broker;
-import Market.InstrumentList;
 
 public class RouterMultiThread extends Thread {
     Broker broker;
@@ -53,6 +48,7 @@ public class RouterMultiThread extends Thread {
                 else {
                     out.println(outputLine);
                 }
+//                out.println(outputLine);
                 if (outputLine.equals("exit"))
                     break;
             }
