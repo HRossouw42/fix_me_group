@@ -21,13 +21,6 @@ public class RouterProtocol {
     private static final int NUMJOKES = 5;
     int clientId = 0;
     private int state = WAITING;
-    private int currentJoke = 0;
-    private String[] clues = {"Turnip", "Little Old Lady", "Atch", "Who", "Who"};
-    private String[] answers = {"Turnip the heat, it's cold in here!",
-            "I didn't know you could yodel!",
-            "Bless you!",
-            "Is there an owl in here?",
-            "Is there an echo in here?"};
 
     public RouterProtocol(int id, Set<PrintWriter> writers) {
         this.clientId = id;

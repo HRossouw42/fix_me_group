@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,12 +10,14 @@ public class RouterMultiThread extends Thread {
     int clientId = 0;
     private Socket socket = null;
     private Set<PrintWriter> writers;
+    private InstrumentList marketList = null;
 
-    public RouterMultiThread(Socket socket, int counter, Set<PrintWriter> writers) {
+    public RouterMultiThread(Socket socket, int counter, Set<PrintWriter> writers, InstrumentList marketList) {
         super("RouterMultiThread");
         this.socket = socket;
         this.clientId = counter;
         this.writers = writers;
+        this.marketList = marketList;
     }
 
     public void run() {

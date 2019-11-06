@@ -14,40 +14,6 @@ public class Router {
 
     public Set<PrintWriter> writers = new HashSet<>();
 
-    public static void marketConnection() {
-
-        InstrumentList employee = null;
-
-        try {
-
-            ServerSocket socketConnection = new ServerSocket(11111);
-
-            System.out.println("Server Waiting");
-
-            Socket pipe = socketConnection.accept();
-
-            ObjectInputStream serverInputStream = new
-                    ObjectInputStream(pipe.getInputStream());
-
-            ObjectOutputStream serverOutputStream = new
-                    ObjectOutputStream(pipe.getOutputStream());
-
-            employee = (InstrumentList) serverInputStream.readObject();
-
-            employee.setPotionNumber(256);
-            employee.setPotionName("John");
-
-            serverOutputStream.writeObject(employee);
-
-            serverInputStream.close();
-            serverOutputStream.close();
-
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
-
     public static void main(String[] args) throws IOException {
 
         int routerCounter = 100000; //for IDs of connections
@@ -87,8 +53,8 @@ public class Router {
             while (listening) {
                 routerCounter++; //assign IDs
                 marketCounter++;
-                new RouterMultiThread(serverSocket.accept(), routerCounter, writers).start();
-                new RouterMultiThread(marketSocket.accept(), marketCounter, writers).start();
+                new RouterMultiThread(serverSocket.accept(), routerCounter, writers, marketList).start();
+                new RouterMultiThread(marketSocket.accept(), marketCounter, writers, marketList).start();
             }
         } catch (IOException e) {
             System.err.println("Could not listen on ports:" + brokerPortNumber + " " + marketPortNumber);

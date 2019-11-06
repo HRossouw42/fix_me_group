@@ -37,9 +37,9 @@ public class Market {
             System.out.println("Potion name after= "
                     + health .getPotionName());
 
-            System.out.println("CLOSING PORTS");
-            clientOutputStream.close();
-            clientInputStream.close();
+//            System.out.println("CLOSING PORTS");
+//            clientOutputStream.close();
+//            clientInputStream.close();
 
             /*
             BufferedReader stdIn =
