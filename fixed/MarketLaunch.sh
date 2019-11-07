@@ -1,0 +1,1 @@
+java -jar Market/target/Market-1.jar
