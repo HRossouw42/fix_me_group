@@ -26,3 +26,11 @@ hs_err_pid*
 .idea
 
 production
+target
+
+.vscode
+.iml
+.DS_Store
+.settings
+.project
+.classpath
