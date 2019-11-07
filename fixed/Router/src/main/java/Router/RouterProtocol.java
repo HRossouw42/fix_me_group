@@ -14,16 +14,16 @@ public class RouterProtocol {
     private static final int CONFIRM = 4;
     private static final int CONFIRMSELL = 5;
 
-    private static final int BROKERBUY = 6;
-    private static final int BROKERSELL = 7;
+    // private static final int BROKERBUY = 6;
+    // private static final int BROKERSELL = 7;
 
     // private static final int MARKETREJECT = 8;
     // private static final int MARKETEXEC = 9;
 
-    String[] Items = {"Goldium", "Carbonadium" , "Silverite", "BoonBucks"};
-    String[] Prices = {"420", "6900" , "10110", "8888"};
-    String[] Market = {"200001", "200002", "200003", "200004"};
-    String[] Number = {"1", "2", "3", "4"};
+    // String[] Items = {"Goldium", "Carbonadium" , "Silverite", "BoonBucks"};
+    // String[] Prices = {"420", "6900" , "10110", "8888"};
+    // String[] Market = {"200001", "200002", "200003", "200004"};
+    // String[] Number = {"1", "2", "3", "4"};
     int index = 0;
  
     int clientId = 0;
@@ -47,33 +47,41 @@ public class RouterProtocol {
             }
         } else if (state == ISBROKER) {
             if (theInput.equalsIgnoreCase("Buy")) {
-                theOutput = "List of Items available for purchase for now: Goldium, Carbonadium, Silverite and BoonBucks";
-                state = BROKERBUY; //TODO check input
-            } else if (theInput.equalsIgnoreCase("Sell")) {
-                theOutput = "List of Items available for sell for now: Goldium, Carbonadium, Silverite and BoonBucks";
-                state = BROKERSELL; //TODO check input
-            } else {
-                theOutput = "You must either 'Buy' or 'Sell'";
-            }
-        }  else if (state == BROKERBUY) {
-            while(index < Items.length) {
-                if (theInput.equalsIgnoreCase(Items[index])) {
-                    String checksum = Items[index] + Prices[index] + clientId + Number[index];
-                    theOutput = "your order is: " + checksum + ". are you sure you wish to purchase this? (Y/N)";
-                    state = CONFIRM;
-                    break;
-                }
-                else{
-                    theOutput = "Please choose an actual existing item - press Enter to go back";
-                    state = ISBROKER;
-                }
+                theOutput = "Buy potion y/n";
+                // state = BROKERBUY; //TODO check input
+                state = CONFIRM;
                 index++;
+            } else if (theInput.equalsIgnoreCase("Sell") && index !=0 ) {
+                theOutput = "Sell potion y/n";
+                // state = BROKERSELL; //TODO check input
+                state = CONFIRMSELL;
+            } else {
+                if (!theInput.equalsIgnoreCase("Sell"))
+                    theOutput = "You must either 'Buy' or 'Sell'";  
+                else{
+                    theOutput = "You have nothing to sell. Press 'Enter' to conyinue.";
+                    state = WAITING;
+                }
             }
+        // } else if (state == BROKERBUY) {
+        //     while(index < Items.length) {
+        //         if (theInput.equalsIgnoreCase(Items[index])) {
+        //             String checksum = Items[index] + Prices[index] + clientId + Number[index];
+        //             theOutput = "your order is: " + checksum + ". are you sure you wish to purchase this? (Y/N)";
+        //             state = CONFIRM;
+        //             break;
+        //         }
+        //         else{
+        //             theOutput = "Please choose an actual existing item - press Enter to go back";
+        //             state = ISBROKER;
+        //         }
+        //         index++;
+        //     }
         }
         else if (state == CONFIRM){
             if (theInput.equalsIgnoreCase("y")) {
-            theOutput = "Item sold! Continue? (Y/N)";
-            state = ANOTHER;
+            theOutput = "Item sold! Press 'Enter' to continue.";
+            state = WAITING;
             }else if (theInput.equalsIgnoreCase("n")) {
                 theOutput = "exit";
                 state = WAITING;
@@ -83,26 +91,27 @@ public class RouterProtocol {
                 state = CONFIRM;
         }
     }
-        else if (state == BROKERSELL) {
-            while(index < Items.length) {
-                if (theInput.equalsIgnoreCase(Items[index])) {
-                    String checksum = Items[index] + Prices[index] + clientId + Number[index];
-                    theOutput = "your order is: " + checksum + ". are you sure you wish to sell this? (Y/N)";
-                    state = CONFIRMSELL;
-                    break;
-                }
-                else{
-                    theOutput = "Please choose an actual existing item - press Enter to go back";
-                    state = ISBROKER;
-                }
-                index++;
-            }
-        }
+        // else if (state == BROKERSELL) {
+        //     while(index < Items.length) {
+        //         if (theInput.equalsIgnoreCase(Items[index])) {
+        //             String checksum = Items[index] + Prices[index] + clientId + Number[index];
+        //             theOutput = "your order is: " + checksum + ". are you sure you wish to sell this? (Y/N)";
+        //             state = CONFIRMSELL;
+        //             break;
+        //         }
+        //         else{
+        //             theOutput = "Please choose an actual existing item - press Enter to go back";
+        //             state = ISBROKER;
+        //         }
+        //         index++;
+        //     }
+        // }
         else if (state == CONFIRMSELL){
             if (theInput.equalsIgnoreCase("y")) {
-                theOutput = "Item sold! Keep shopping? (Y/N)";
+                theOutput = "Item sold! Press 'Enter' to continue.";
                 index = 0;
-                state = ANOTHER;
+                // state = ANOTHER;
+                state = WAITING;
             } else if (theInput.equalsIgnoreCase("n")) {
                 theOutput = "exit";
                 state = WAITING;
