@@ -54,7 +54,10 @@ public class RouterMultiThread extends Thread {
                     out.println(outputLine);
                 }
                 if (outputLine.equals("exit"))
+                {
+                    // System.out.println("@@@@@@@@@@@@@@@@@@@@@@" + RouterProtocol.index);
                     break;
+                }
             }
             socket.close();
         } catch (IOException e) {
