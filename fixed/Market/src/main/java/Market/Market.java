@@ -13,7 +13,7 @@ public class Market {
         int portNumber = 5001;
 
         //adding instruments
-        InstrumentList health = new InstrumentList(150, "Health");
+        InstrumentList health = new InstrumentList(100, "Health");
         System.out.println("Potion number before= "
                 + health .getPotionNumber());
         System.out.println("Potion name before= "
