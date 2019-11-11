@@ -44,7 +44,7 @@ public class RouterProtocol {
         String theOutput = null;
         if (state == WAITING) {
             if (clientId >= 100000 && clientId <= 200000) {
-                theOutput = "BrokerID: " + clientId + " " + " Would you like to 'Buy' or 'Sell'?";
+                theOutput = "BrokerID: " + clientId + " " + "Stock:" + index + " Would you like to 'Buy' or 'Sell'?";
                 state = ISBROKER;
             } else if (clientId >= 200000) {
                 theOutput = "MarketID: " + clientId + " Use 'List' to see your instruments";

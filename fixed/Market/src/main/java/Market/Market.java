@@ -15,9 +15,9 @@ public class Market {
         //adding instruments
         InstrumentList health = new InstrumentList(100, "Health");
         System.out.println("Potion number before= "
-                + health .getPotionNumber());
+                + health.getPotionNumber());
         System.out.println("Potion name before= "
-                + health .getPotionName());
+                + health.getPotionName());
 
 
         System.out.println("Attempting connection...");
@@ -28,7 +28,7 @@ public class Market {
                 BufferedReader in = new BufferedReader(
                         new InputStreamReader(kkSocket.getInputStream())) //reads from IO
         ) {
-            System.out.println("Connected to Router");
+            System.out.println("Connected to Router. Current stock " + health.getPotionName() + ":" + health.getPotionNumber());
             ObjectOutputStream clientOutputStream = new
                     ObjectOutputStream(kkSocket.getOutputStream());
             ObjectInputStream clientInputStream = new
@@ -36,7 +36,7 @@ public class Market {
 
             clientOutputStream.writeObject(health);
 
-            health= (InstrumentList) clientInputStream.readObject();
+            health = (InstrumentList) clientInputStream.readObject();
 
 //            System.out.println("CLOSING PORTS");
 //            clientOutputStream.close();
