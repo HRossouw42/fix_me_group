@@ -88,7 +88,7 @@ class updateMarket extends TimerTask {
 
     public void run() {
         try {
-            System.out.println(marketList.getPotionNumber());
+            //System.out.println(marketList.getPotionNumber());
             serverOutputStream.writeObject(marketList);
         } catch (IOException e) {
             System.out.println(e);

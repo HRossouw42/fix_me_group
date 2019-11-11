@@ -37,11 +37,6 @@ public class Market {
 
             health= (InstrumentList) clientInputStream.readObject();
 
-            System.out.println("Potion number after= "
-                    + health .getPotionNumber());
-            System.out.println("Potion name after= "
-                    + health .getPotionName());
-
 //            System.out.println("CLOSING PORTS");
 //            clientOutputStream.close();
 //            clientInputStream.close();
