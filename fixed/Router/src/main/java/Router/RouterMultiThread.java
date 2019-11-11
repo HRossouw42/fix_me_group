@@ -35,7 +35,7 @@ public class RouterMultiThread extends Thread {
         ) {
             String inputLine, outputLine;
             writers.add(out);
-            System.out.println(writers);
+//            System.out.println(writers);
             RouterProtocol kkp = new RouterProtocol(clientId, writers);
             outputLine = kkp.processInput(null);
             out.println(outputLine);
@@ -55,7 +55,14 @@ public class RouterMultiThread extends Thread {
                 }
                 if (outputLine.equals("exit"))
                 {
-                    // System.out.println("@@@@@@@@@@@@@@@@@@@@@@" + RouterProtocol.index);
+//                     System.out.println("@@@@@@@@@@@@@@@@@@@@@@" + RouterProtocol.index);
+                     if (RouterProtocol.index >= 0 && marketList.getPotionNumber() > 0) {
+                         marketList.setPotionNumber(marketList.getPotionNumber() - RouterProtocol.index);
+                         System.out.println("Market: ACCEPTED. Stock:" + marketList.getPotionNumber());
+                     }
+                     else {
+                         System.out.println("Market: REJECTED.");
+                     }
                     break;
                 }
             }
