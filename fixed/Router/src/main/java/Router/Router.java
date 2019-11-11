@@ -55,7 +55,7 @@ public class Router {
 //            marketList.addPotionNumber();
 
             Timer timer = new Timer();
-            timer.schedule(new updateMarket(serverOutputStream, marketList), 0, 5000);
+            timer.schedule(new updateMarket(serverOutputStream, marketList), 0, 3000);
 
 //            serverOutputStream.writeObject(marketList);
 
