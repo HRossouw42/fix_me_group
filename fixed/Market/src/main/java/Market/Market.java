@@ -24,6 +24,9 @@ public class Market {
 
         try (
                 Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
+                PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true); //this looks at the IO of the socket
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(kkSocket.getInputStream())) //reads from IO
         ) {
             ObjectOutputStream clientOutputStream = new
                     ObjectOutputStream(kkSocket.getOutputStream());
@@ -43,7 +46,6 @@ public class Market {
 //            clientOutputStream.close();
 //            clientInputStream.close();
 
-            /*
             BufferedReader stdIn =
                     new BufferedReader(new InputStreamReader(System.in));
             String fromServer;
@@ -68,7 +70,6 @@ public class Market {
                 }
             }
 
-             */
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
             System.exit(1);

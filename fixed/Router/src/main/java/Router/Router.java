@@ -10,6 +10,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 // initial -> https://www.java-samples.com/showtutorial.php?tutorialid=1167
@@ -48,17 +50,21 @@ public class Router {
 
             marketList = (InstrumentList) serverInputStream.readObject();
 
-            marketList.setPotionNumber(256);
-            marketList.setPotionName("Mana");
-            marketList.addPotionNumber();
+//            marketList.setPotionNumber(256);
+//            marketList.setPotionName("Mana");
+//            marketList.addPotionNumber();
 
-            serverOutputStream.writeObject(marketList);
+            Timer timer = new Timer();
+            timer.schedule(new updateMarket(serverOutputStream, marketList), 0, 5000);
+
+//            serverOutputStream.writeObject(marketList);
 
             while (listening) {
                 routerCounter++; //assign IDs
                 marketCounter++;
                 new RouterMultiThread(serverSocket.accept(), routerCounter, writers, marketList).start();
                 new RouterMultiThread(marketSocket.accept(), marketCounter, writers, marketList).start();
+
             }
         } catch (IOException e) {
             System.err.println("Could not listen on ports:" + brokerPortNumber + " " + marketPortNumber);
@@ -69,4 +75,23 @@ public class Router {
     }
 
 
+}
+
+class updateMarket extends TimerTask {
+    ObjectOutputStream serverOutputStream;
+    InstrumentList marketList;
+
+    public updateMarket(ObjectOutputStream serverOutputStream, InstrumentList marketList) {
+        this.serverOutputStream = serverOutputStream;
+        this.marketList = marketList;
+    }
+
+    public void run() {
+        try {
+            System.out.println(marketList.getPotionNumber());
+            serverOutputStream.writeObject(marketList);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
 }

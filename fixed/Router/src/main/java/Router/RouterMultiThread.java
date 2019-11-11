@@ -55,7 +55,8 @@ public class RouterMultiThread extends Thread {
                 }
                 if (outputLine.equals("exit"))
                 {
-                    // System.out.println("@@@@@@@@@@@@@@@@@@@@@@" + RouterProtocol.index);
+                     System.out.println("@@@@@@@@@@@@@@@@@@@@@@" + RouterProtocol.index);
+                    marketList.setPotionNumber(RouterProtocol.index);
                     break;
                 }
             }
