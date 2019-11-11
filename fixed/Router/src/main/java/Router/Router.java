@@ -64,7 +64,6 @@ public class Router {
                 marketCounter++;
                 new RouterMultiThread(serverSocket.accept(), routerCounter, writers, marketList).start();
                 new RouterMultiThread(marketSocket.accept(), marketCounter, writers, marketList).start();
-
             }
         } catch (IOException e) {
             System.err.println("Could not listen on ports:" + brokerPortNumber + " " + marketPortNumber);
