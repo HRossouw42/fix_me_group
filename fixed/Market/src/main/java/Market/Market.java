@@ -13,18 +13,22 @@ public class Market {
         int portNumber = 5001;
 
         //adding instruments
-        InstrumentList health = new InstrumentList(150, "Health");
+        InstrumentList health = new InstrumentList(100, "Health");
         System.out.println("Potion number before= "
-                + health .getPotionNumber());
+                + health.getPotionNumber());
         System.out.println("Potion name before= "
-                + health .getPotionName());
+                + health.getPotionName());
 
 
         System.out.println("Attempting connection...");
 
         try (
                 Socket kkSocket = new Socket(hostName, portNumber); //open a socket that is connected to the server running on the specific port number
+                PrintWriter out = new PrintWriter(kkSocket.getOutputStream(), true); //this looks at the IO of the socket
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(kkSocket.getInputStream())) //reads from IO
         ) {
+            System.out.println("Connected to Router. Current stock " + health.getPotionName() + ":" + health.getPotionNumber());
             ObjectOutputStream clientOutputStream = new
                     ObjectOutputStream(kkSocket.getOutputStream());
             ObjectInputStream clientInputStream = new
@@ -32,18 +36,12 @@ public class Market {
 
             clientOutputStream.writeObject(health);
 
-            health= (InstrumentList) clientInputStream.readObject();
-
-            System.out.println("Potion number after= "
-                    + health .getPotionNumber());
-            System.out.println("Potion name after= "
-                    + health .getPotionName());
+            health = (InstrumentList) clientInputStream.readObject();
 
 //            System.out.println("CLOSING PORTS");
 //            clientOutputStream.close();
 //            clientInputStream.close();
 
-            /*
             BufferedReader stdIn =
                     new BufferedReader(new InputStreamReader(System.in));
             String fromServer;
@@ -68,7 +66,6 @@ public class Market {
                 }
             }
 
-             */
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
             System.exit(1);
