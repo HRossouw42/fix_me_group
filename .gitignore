@@ -34,3 +34,6 @@ target
 .settings
 .project
 .classpath
+
+#InteliJ files
+*.iml
