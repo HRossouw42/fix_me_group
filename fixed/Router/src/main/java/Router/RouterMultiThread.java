@@ -39,12 +39,9 @@ public class RouterMultiThread extends Thread {
             outputLine = kkp.processInput(null);
             out.println(outputLine);
 
-            //TODO fix this printwriter
-
             while ((inputLine = in.readLine()) != null) {
                 outputLine = kkp.processInput(inputLine);
                 if (outputLine.equalsIgnoreCase("List")){
-     //               System.out.println("REEEEEEE");
                     for (PrintWriter writer : writers) {
                         writer.println(outputLine);
                     }
@@ -52,7 +49,7 @@ public class RouterMultiThread extends Thread {
                 else {
                     out.println(outputLine);
                 }
-                if (outputLine.equals("exit"))
+                if (outputLine.equals("Exiting now..."))
                 {
                      if (RouterProtocol.index >= 0 && marketList.getPotionNumber() > 0) {
                          marketList.setPotionNumber(marketList.getPotionNumber() - RouterProtocol.index);
