@@ -16,11 +16,6 @@ public class Market {
 
         //adding instruments
         InstrumentList health = new InstrumentList(100, "Health");
-        System.out.println("Potion number before= "
-                + health.getPotionNumber());
-        System.out.println("Potion name before= "
-                + health.getPotionName());
-
 
         System.out.println("Attempting connection...");
 
