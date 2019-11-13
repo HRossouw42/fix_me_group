@@ -34,7 +34,7 @@ public class Router {
 
         InstrumentList marketList = null;
 
-        System.out.println("Connect at least 1 Market and 1 Broker");
+        System.out.println("Server Online. Please connect at least 1 Market and 1 Broker");
         try (
                 //currently requires at least these 2 to be connected before continuing
                 ServerSocket serverSocket = new ServerSocket(brokerPortNumber);
@@ -50,15 +50,9 @@ public class Router {
 
             marketList = (InstrumentList) serverInputStream.readObject();
 
-//            marketList.setPotionNumber(256);
-//            marketList.setPotionName("Mana");
-//            marketList.addPotionNumber();
-
             Timer timer = new Timer();
             timer.schedule(new updateMarket(serverOutputStream, marketList), 0, 3000);
-
-//            serverOutputStream.writeObject(marketList);
-
+          
             while (listening) {
                 routerCounter++; //assign IDs
                 marketCounter++;
