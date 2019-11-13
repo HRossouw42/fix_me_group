@@ -13,14 +13,14 @@ public class RouterProtocol {
     
     private static final int CONFIRM = 4;
     private static final int CONFIRMSELL = 5;
-
+    
     public static int index = 0;
     public static int stock = 100;
     
     int clientId = 0;
     private int state = WAITING;
     static boolean isExit = false;
-
+    
     public RouterProtocol(int id, Set<PrintWriter> writers) {
         this.clientId = id;
         this.writers = writers;
@@ -42,7 +42,7 @@ public class RouterProtocol {
             }
         } 
         else if(state >= 0 && theInput.equalsIgnoreCase("exit")) {     
-            theOutput = "Exiting now...";
+            theOutput = "exit";
             isExit = true;
             state = WAITING;
     }
@@ -61,20 +61,6 @@ public class RouterProtocol {
                     state = WAITING;
                 }
             }
-        // } else if (state == BROKERBUY) {
-        //     while(index < Items.length) {
-        //         if (theInput.equalsIgnoreCase(Items[index])) {
-        //             String checksum = Items[index] + Prices[index] + clientId + Number[index];
-        //             theOutput = "your order is: " + checksum + ". are you sure you wish to purchase this? (Y/N)";
-        //             state = CONFIRM;
-        //             break;
-        //         }
-        //         else{
-        //             theOutput = "Please choose an actual existing item - press Enter to go back";
-        //             state = ISBROKER;
-        //         }
-        //         index++;
-        //     }
         }
         else if (state == CONFIRM){
             if (theInput.equalsIgnoreCase("y") || theInput.equalsIgnoreCase("yes")) {
@@ -118,7 +104,7 @@ public class RouterProtocol {
                 theOutput = "Press ENTER to continue";
                 state = WAITING;
             } else if (theInput.equalsIgnoreCase("n") || theInput.equalsIgnoreCase("no")) {
-                theOutput = "Exiting now...";
+                theOutput = "exit";
                 isExit = true;
                 state = WAITING;
             }
