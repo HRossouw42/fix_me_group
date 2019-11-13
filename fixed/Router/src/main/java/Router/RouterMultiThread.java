@@ -49,9 +49,8 @@ public class RouterMultiThread extends Thread {
                 else {
                     out.println(outputLine);
                 }
-                if (outputLine.equals("Exiting now..."))
+                if (outputLine.equals("exit"))
                 {
-
                      if (RouterProtocol.index >= 0 && marketList.getPotionNumber() > 0) {
                          marketList.setPotionNumber(marketList.getPotionNumber() - RouterProtocol.index);
                          System.out.println("Market: ACCEPTED. Stock:" + marketList.getPotionNumber());
