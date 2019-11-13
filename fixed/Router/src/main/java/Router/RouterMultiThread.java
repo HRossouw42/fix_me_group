@@ -58,7 +58,7 @@ public class RouterMultiThread extends Thread {
 //                     System.out.println("@@@@@@@@@@@@@@@@@@@@@@" + RouterProtocol.index);
                      if (RouterProtocol.index >= 0 && marketList.getPotionNumber() > 0) {
                          marketList.setPotionNumber(marketList.getPotionNumber() - RouterProtocol.index);
-                         System.out.println("Market: ACCEPTED. Stock:" + marketList.getPotionNumber());
+                         System.out.println("Market: ACCEPTED from Broker ID[" + clientId + "] Stock:" + marketList.getPotionNumber());
                      }
                      else {
                          System.out.println("Market: REJECTED.");
