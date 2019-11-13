@@ -52,7 +52,7 @@ public class Router {
 
             Timer timer = new Timer();
             timer.schedule(new updateMarket(serverOutputStream, marketList), 0, 3000);
-
+          
             while (listening) {
                 routerCounter++; //assign IDs
                 marketCounter++;

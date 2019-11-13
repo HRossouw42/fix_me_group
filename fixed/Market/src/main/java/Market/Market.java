@@ -39,8 +39,11 @@ public class Market {
             clientOutputStream.writeObject(health);
 
             health = (InstrumentList) clientInputStream.readObject();
-
-
+          
+//            System.out.println("CLOSING PORTS");
+//            clientOutputStream.close();
+//            clientInputStream.close();
+          
             BufferedReader stdIn =
                     new BufferedReader(new InputStreamReader(System.in));
             String fromServer;
