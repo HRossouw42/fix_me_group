@@ -25,7 +25,7 @@ public class Market {
                 BufferedReader in = new BufferedReader(
                         new InputStreamReader(kkSocket.getInputStream())) //reads from IO
         ) {
-            System.out.println("Connected to Router. Current stock " + health.getPotionName() + ":" + health.getPotionNumber());
+            System.out.println("Connected to Router. Stock sent to Router -> " + health.getPotionName() + ":" + health.getPotionNumber());
             ObjectOutputStream clientOutputStream = new
                     ObjectOutputStream(kkSocket.getOutputStream());
             ObjectInputStream clientInputStream = new
